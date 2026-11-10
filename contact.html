@@ -76,7 +76,7 @@
 <script>
 (function(){var q=location.search;if(q.indexOf('sent=1')>-1){document.getElementById('ok').hidden=false;}
 else if(q.indexOf('err=')>-1){document.getElementById('err').hidden=false;}
-if(q){document.getElementById('ask').scrollIntoView();}})();
+if(/sent=1|err=/.test(q)){addEventListener('load',function(){document.getElementById('ask').scrollIntoView();});}})();
 </script>
 
 <section class="tight">
