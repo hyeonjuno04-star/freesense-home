@@ -151,3 +151,20 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
   th,td{display:block;width:100%;border:none;padding:4px 16px}
   tr{display:block;border-bottom:1px solid var(--line);padding:10px 0}
 }
+
+/* 글 문의 양식 */
+.ask{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px;display:grid;gap:16px;max-width:760px}
+.ask h2{margin:0}
+.ask .sub{margin:-8px 0 0;color:var(--muted)}
+.ask .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ask label{display:grid;gap:6px;font-weight:700;font-size:16px}
+.ask input,.ask select,.ask textarea{font:inherit;font-weight:400;font-size:17px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box}
+.ask input:focus,.ask select:focus,.ask textarea:focus{outline:3px solid var(--soft);border-color:var(--brand-2)}
+.ask .agree{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;color:var(--muted)}
+.ask .agree input{width:20px;height:20px;margin-top:3px;flex:none}
+.ask .hp{position:absolute;left:-9999px}
+.ask button{border:0;cursor:pointer;justify-self:start}
+.ask .msg{padding:12px 16px;border-radius:10px;font-weight:700}
+.ask .msg.ok{background:var(--soft);color:var(--brand)}
+.ask .msg.err{background:#FDECEC;color:#A1312F}
+@media (max-width:760px){.ask{padding:22px 16px}.ask .row{grid-template-columns:1fr}.ask button{justify-self:stretch}}
