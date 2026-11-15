@@ -10,6 +10,23 @@
 <meta property="og:url" content="https://freesense.kr/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235D4A8E'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23FBF9FF' text-anchor='middle'>F</text></svg>">
 <link rel="stylesheet" href="style.css">
+<style>
+.sxg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.sx{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.sx:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(60,40,100,.16)}
+.sx .stage{position:relative;height:330px;overflow:hidden;background:radial-gradient(circle at 25% 15%,rgba(255,255,255,.35),transparent 45%),linear-gradient(150deg,var(--c1),var(--c2))}
+.sx .phone{position:absolute;left:50%;top:30px;width:196px;transform:translateX(-50%);background:#16131c;border-radius:30px;padding:8px;box-shadow:0 22px 40px rgba(0,0,0,.35);transition:transform .3s}
+.sx:hover .phone{transform:translateX(-50%) translateY(-8px)}
+.sx .phone::before{content:"";position:absolute;top:13px;left:50%;width:54px;height:6px;margin-left:-27px;border-radius:4px;background:#16131c;z-index:2}
+.sx .scr{width:180px;height:390px;border-radius:23px;overflow:hidden;background:#fff}
+.sx iframe{width:390px;height:845px;border:0;transform:scale(.4615);transform-origin:0 0;pointer-events:none}
+.sx .meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px}
+.sx .meta small{color:var(--brand-2);font-weight:700;font-size:13px}
+.sx .meta b{font-size:19px}
+.sx .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.sx .chips span{font-size:13px;color:var(--muted);background:var(--soft);border-radius:999px;padding:3px 10px}
+.sx .meta em{font-style:normal;font-weight:700;color:var(--brand);margin-top:8px}
+</style>
 </head>
 <body>
 
@@ -38,18 +55,30 @@
 
 <section>
   <div class="wrap">
-    <div class="grid3">
-      <a class="pf" href="https://hyeonjuno04-star.github.io/homepage-samples/cafe.html" target="_blank" rel="noopener">
-        <div class="shot" style="background:linear-gradient(135deg,#8B5A2B,#D9A066)"><span><small>제작 샘플</small>동네 카페</span></div>
-        <div class="info"><b>카페 소개 홈페이지</b><p>메뉴·가격, 매장 사진, 오시는 길</p></div>
+    <div class="sxg">
+      <a class="sx" href="https://hyeonjuno04-star.github.io/homepage-samples/cafe.html" target="_blank" rel="noopener">
+        <div class="stage" style="--c1:#8B5A2B;--c2:#E3B47C">
+          <div class="phone"><div class="scr"><iframe src="https://hyeonjuno04-star.github.io/homepage-samples/cafe.html" loading="lazy" tabindex="-1" aria-hidden="true" title="카페 소개 홈페이지 미리보기"></iframe></div></div>
+        </div>
+        <div class="meta"><small>제작 예시 · 동네 베이커리 카페</small><b>카페 소개 홈페이지</b><div class="chips"><span>메뉴판</span><span>매장 사진</span><span>단체 주문</span></div><em>샘플 열어 보기 →</em></div>
       </a>
-      <a class="pf" href="https://hyeonjuno04-star.github.io/homepage-samples/hair.html" target="_blank" rel="noopener">
-        <div class="shot" style="background:linear-gradient(135deg,#5B3A6B,#C08BC9)"><span><small>제작 샘플</small>1인 미용실</span></div>
-        <div class="info"><b>예약제 미용실 홈페이지</b><p>시술 가격, 예약 안내, 영업 시간</p></div>
+      <a class="sx" href="https://hyeonjuno04-star.github.io/homepage-samples/hair.html" target="_blank" rel="noopener">
+        <div class="stage" style="--c1:#5B3A6B;--c2:#C99AD3">
+          <div class="phone"><div class="scr"><iframe src="https://hyeonjuno04-star.github.io/homepage-samples/hair.html" loading="lazy" tabindex="-1" aria-hidden="true" title="미용실 예약 홈페이지 미리보기"></iframe></div></div>
+        </div>
+        <div class="meta"><small>제작 예시 · 1인 예약제 미용실</small><b>미용실 예약 홈페이지</b><div class="chips"><span>시술 안내</span><span>예약 문의</span><span>카톡 버튼</span></div><em>샘플 열어 보기 →</em></div>
       </a>
-      <a class="pf" href="https://hyeonjuno04-star.github.io/homepage-samples/academy.html" target="_blank" rel="noopener">
-        <div class="shot" style="background:linear-gradient(135deg,#1F4E79,#6FA3D4)"><span><small>제작 샘플</small>수학 교습소</span></div>
-        <div class="info"><b>교습소 홈페이지</b><p>수업 안내, 수강료, 상담 신청</p></div>
+      <a class="sx" href="https://hyeonjuno04-star.github.io/homepage-samples/academy.html" target="_blank" rel="noopener">
+        <div class="stage" style="--c1:#1F4E79;--c2:#7FB0DD">
+          <div class="phone"><div class="scr"><iframe src="https://hyeonjuno04-star.github.io/homepage-samples/academy.html" loading="lazy" tabindex="-1" aria-hidden="true" title="교습소 홈페이지 미리보기"></iframe></div></div>
+        </div>
+        <div class="meta"><small>제작 예시 · 동네 수학 교습소</small><b>교습소 홈페이지</b><div class="chips"><span>수업 방식</span><span>학년별 반</span><span>상담 신청</span></div><em>샘플 열어 보기 →</em></div>
+      </a>
+      <a class="sx" href="https://hyeonjuno04-star.github.io/homepage-samples/rent.html" target="_blank" rel="noopener">
+        <div class="stage" style="--c1:#9E2B30;--c2:#F08A8D">
+          <div class="phone"><div class="scr"><iframe src="https://hyeonjuno04-star.github.io/homepage-samples/rent.html" loading="lazy" tabindex="-1" aria-hidden="true" title="상가 임대 홍보 페이지 미리보기"></iframe></div></div>
+        </div>
+        <div class="meta"><small>제작 예시 · 빈 상가 임대 홍보</small><b>상가 임대 홍보 페이지</b><div class="chips"><span>매물 사진</span><span>추천 업종</span><span>방문 예약</span></div><em>샘플 열어 보기 →</em></div>
       </a>
     </div>
     <p class="lead" style="margin-top:18px">※ 샘플은 실제 매장이 아닌 제작 예시입니다.</p>
