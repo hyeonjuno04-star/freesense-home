@@ -67,6 +67,9 @@
       <label>문의 종류<select name="kind">
         <option>홈페이지 제작</option><option>홈페이지·서버 관리</option><option>공공조달 납품</option><option>홍보 콘텐츠</option><option>기타</option>
       </select></label>
+      <label>어디서 보고 오셨어요? <small>(선택)</small><select id="src">
+        <option value="">고르지 않음</option><option>네이버·구글 검색</option><option>블로그</option><option>크몽·재능넷</option><option>당근</option><option>카카오톡 채널</option><option>신문·전단</option><option>아는 분 소개</option><option>기타</option>
+      </select></label>
       <label>문의 내용<textarea name="body" required maxlength="2000" rows="5" placeholder="필요한 일, 수량, 희망 날짜 등을 적어 주세요."></textarea></label>
       <label class="hp" aria-hidden="true">비워 두세요<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="agree"><input type="checkbox" name="agree" value="yes" required> 개인정보 수집·이용에 동의합니다. (성함·연락처·문의 내용, 회신 목적, 처리 후 1년 보관)</label>
@@ -77,7 +80,8 @@
 <script>
 (function(){var q=location.search;if(q.indexOf('sent=1')>-1){document.getElementById('ok').hidden=false;}
 else if(q.indexOf('err=')>-1){document.getElementById('err').hidden=false;}
-if(/sent=1|err=/.test(q)){addEventListener('load',function(){document.getElementById('ask').scrollIntoView();});}})();
+if(/sent=1|err=/.test(q)){addEventListener('load',function(){document.getElementById('ask').scrollIntoView();});}
+var f=document.getElementById('form');f.addEventListener('submit',function(){var s=document.getElementById('src').value,b=f.elements.body;if(s&&b.value.indexOf('[보고 온 곳:')!==0){b.value='[보고 온 곳: '+s+']\n'+b.value;}});})();
 </script>
 
 <section class="tight">
