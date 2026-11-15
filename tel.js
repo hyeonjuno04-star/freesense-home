@@ -10,7 +10,8 @@
       '<div style="font-size:16px;color:#615A70;margin-bottom:6px">전화 문의</div>'+
       '<div style="font-size:34px;font-weight:800;color:#5D4A8E;letter-spacing:1px">'+num+'</div>'+
       '<div id="telmsg" style="font-size:15px;color:#615A70;margin:10px 0 18px">휴대폰으로 이 번호에 전화 주세요</div>'+
-      '<button type="button" style="background:#5D4A8E;color:#fff;border:0;border-radius:8px;padding:10px 26px;font-size:16px;font-weight:700;cursor:pointer">닫기</button></div>';
+      '<a href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener" style="display:block;background:#FEE500;color:#191919;border-radius:8px;padding:12px 20px;font-size:17px;font-weight:800;text-decoration:none;margin-bottom:10px">카카오톡으로 바로 문의</a>'+
+      '<button type="button" style="background:#EEEAF5;color:#5D4A8E;border:0;border-radius:8px;padding:9px 26px;font-size:15px;font-weight:700;cursor:pointer">닫기</button></div>';
     bg.addEventListener('click',function(e){ if(e.target===bg||e.target.tagName==='BUTTON') bg.remove(); });
     document.body.appendChild(bg);
     try{ navigator.clipboard.writeText(num.replace(/-/g,'')).then(function(){ var m=document.getElementById('telmsg'); if(m) m.textContent='번호를 복사했어요 · 휴대폰으로 전화 주세요'; }); }catch(e){}
