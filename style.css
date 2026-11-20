@@ -265,6 +265,9 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
   .sl-btns{margin-top:6px}.sl-btns a{padding:8px 12px;font-size:14px}
   .sl-r{grid-template-columns:minmax(0,1fr);padding:14px 16px 16px;gap:12px}
   .sl-get{display:none}
+  .slides{align-items:flex-start}
+  .sl-l small{display:none}.sl-l h3{font-size:19px}
+  .sl .ptable th small{display:none!important}.sl .ptable th,.sl .ptable td{padding:9px 10px}
   .sl .ptable th,.sl .ptable td{padding:6px 8px}.sl .ptable th small{font-size:11px;line-height:1.35;display:block}
   .deck-tabs{gap:4px;margin-bottom:6px}.deck-bar{margin-bottom:6px}.deck-bar button{width:36px;height:36px;font-size:22px}
 }
