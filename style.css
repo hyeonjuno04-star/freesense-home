@@ -9,7 +9,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
   line-height:1.7;font-size:17px;word-break:keep-all}
 a{color:inherit}
 img{max-width:100%}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
 
 /* 상단 */
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
@@ -230,6 +230,23 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
 @media (max-width:600px){.svcs,.gets{grid-template-columns:1fr}.pd-hero h1{font-size:29px}.pd-hero p{font-size:16px}.st{grid-template-columns:36px 1fr}.st span{grid-column:2}}
 @media (max-width:600px){nav{gap:14px;flex-wrap:wrap}nav .call{display:none}.pd-hero .btns .btn{padding:11px 14px;font-size:15px}.ptable th,.ptable td{padding:12px 14px}.ptable td{font-size:16px}.wrap{overflow-wrap:anywhere}}
 /* 첫 화면 펼침 */
+.fulls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.fulls .full{margin:0;display:flex;flex-direction:column}
+.fulls .full>img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--line)}
+.fulls .full-head{padding:20px 20px 18px;display:block}
+.fulls .full-head h3{font-size:19px;line-height:1.4;margin:6px 0 8px}
+.fulls .full-head p{font-size:14px;line-height:1.6}
+.fulls .full-head .pd-no{font-size:11px;margin:0}
+.fulls .full-steps{font-size:12px;margin-top:12px;padding:6px 10px}
+.fulls .full-body{display:flex;flex-direction:column;gap:16px;padding:18px 20px 20px;flex:1}
+.fulls .full-body h4{font-size:15px;margin-bottom:6px}
+.fulls .who li{font-size:13.5px;padding:5px 0 5px 24px}.fulls .who li:before{top:11px;left:2px;width:10px;height:6px}
+.fulls .getl{font-size:13px}.fulls .getl li{margin-bottom:3px}
+.fulls .ptable th,.fulls .ptable td{padding:7px 10px}.fulls .ptable th b{font-size:14px}.fulls .ptable th small{font-size:12px}.fulls .ptable td{font-size:14px}
+.fulls .pnote{font-size:12px}
+.fulls .full-body>div:last-child{margin-top:auto}
+@media (max-width:1000px){.fulls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.fulls{grid-template-columns:minmax(0,1fr)}}
 .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:34px;position:sticky;top:66px;z-index:5;background:var(--bg);padding:10px 0}
 .chips a{display:flex;align-items:center;gap:10px;text-decoration:none;background:#fff;border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;padding:10px 14px;font-weight:700;font-size:15px}
 .chips em{font-style:normal;color:var(--c);font-weight:800}
