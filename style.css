@@ -264,7 +264,9 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
   .sl-sub,.sl-steps,.sl-who{display:none}
   .sl-btns{margin-top:6px}.sl-btns a{padding:8px 12px;font-size:14px}
   .sl-r{grid-template-columns:minmax(0,1fr);padding:14px 16px 16px;gap:12px}
-  .sl-get ul{font-size:13px;line-height:1.6;columns:2;column-gap:14px}
+  .sl-get{display:none}
+  .sl .ptable th,.sl .ptable td{padding:6px 8px}.sl .ptable th small{font-size:11px;line-height:1.35;display:block}
+  .deck-tabs{gap:4px;margin-bottom:6px}.deck-bar{margin-bottom:6px}.deck-bar button{width:36px;height:36px;font-size:22px}
 }
 /* 휴대폰 9칸 */
 .mgrid{display:none}

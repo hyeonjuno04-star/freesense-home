@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://freesense.kr/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2316202E'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'>F</text></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="style.css?v=20261120g">
+<link rel="stylesheet" href="style.css?v=20261120h">
 </head>
 <body>
 
@@ -198,14 +198,14 @@
       </div>
     </div>
 <script>(function(){var s=document.querySelector('.slides'),sl=s.children,tb=document.querySelectorAll('.deck-tabs button'),cnt=document.querySelector('.deck-count b');
-function go(i){i=(i+sl.length)%sl.length;s.scrollTo({left:sl[i].offsetLeft-s.offsetLeft,behavior:'smooth'})}
+function go(i){i=(i+sl.length)%sl.length;s.scrollTo({left:i*s.clientWidth,behavior:'smooth'})}
 function cur(){return Math.round(s.scrollLeft/s.clientWidth)}
 function mark(){var i=cur();cnt.textContent=i+1;tb.forEach(function(b,k){b.classList.toggle('on',k===i)})}
 s.addEventListener('scroll',function(){clearTimeout(s._t);s._t=setTimeout(mark,60)},{passive:true});
 tb.forEach(function(b){b.addEventListener('click',function(){go(+b.dataset.i)})});
 document.querySelector('.deck-prev').onclick=function(){go(cur()-1)};document.querySelector('.deck-next').onclick=function(){go(cur()+1)};
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)});
-var h=location.hash.match(/^#s(\d)$/);if(h)setTimeout(function(){go(+h[1]-1)},50);mark()})();</script>
+var h=location.hash.match(/^#s([1-9])$/);if(h)setTimeout(function(){go(+h[1]-1)},50);mark()})();</script>
   </div>
 </section>
 
