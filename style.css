@@ -229,6 +229,43 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
 @media (max-width:900px){.svcs,.gets{grid-template-columns:1fr 1fr}.pd-2{grid-template-columns:minmax(0,1fr);gap:28px}}
 @media (max-width:600px){.svcs,.gets{grid-template-columns:1fr}.pd-hero h1{font-size:29px}.pd-hero p{font-size:16px}.st{grid-template-columns:36px 1fr}.st span{grid-column:2}}
 @media (max-width:600px){nav{gap:14px;flex-wrap:wrap}nav .call{display:none}.pd-hero .btns .btn{padding:11px 14px;font-size:15px}.ptable th,.ptable td{padding:12px 14px}.ptable td{font-size:16px}.wrap{overflow-wrap:anywhere}}
+/* 서비스 9장 넘기기 */
+.deck{position:relative}
+.deck-tabs{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin-bottom:10px}
+.deck-tabs button{font:inherit;cursor:pointer;border:1px solid var(--line);border-top:4px solid var(--c);background:#fff;border-radius:10px;padding:8px 4px;font-size:13px;font-weight:700;line-height:1.3;word-break:keep-all;color:var(--ink)}
+.deck-tabs button em{display:block;font-style:normal;color:var(--c);font-size:12px}
+.deck-tabs button.on{background:var(--c);color:#fff}.deck-tabs button.on em{color:#fff}
+.deck-bar{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:10px}
+.deck-bar button{font:inherit;cursor:pointer;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:26px;line-height:1;color:var(--ink)}
+.deck-count{font-size:16px;color:var(--muted)}.deck-count b{color:var(--ink);font-size:20px}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:18px;-webkit-overflow-scrolling:touch}
+.slides::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:min(560px,calc(100vh - 260px))}
+.sl-l{background:var(--c);background-image:linear-gradient(135deg,rgba(0,0,0,.2),rgba(0,0,0,0) 60%);color:#fff;padding:30px 30px 26px;display:flex;flex-direction:column;gap:10px}
+.sl-no{font-size:40px;font-weight:800;line-height:1;letter-spacing:-1px}.sl-no i{font-style:normal;font-size:16px;opacity:.6}
+.sl-l small{font-weight:700;opacity:.85}
+.sl-l h3{font-size:27px;line-height:1.35;margin:0;letter-spacing:-.5px}
+.sl-sub{margin:0;font-size:15px;color:rgba(255,255,255,.9)}
+.sl-steps{margin:0;font-size:13px;background:rgba(255,255,255,.14);border-radius:8px;padding:7px 12px}
+.sl-btns{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+.sl-btns a{text-decoration:none;font-weight:700;padding:10px 16px;border-radius:9px;border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:15px}
+.sl-btns a:first-child{background:#fff;color:var(--c);border-color:#fff}
+.sl-r{padding:24px 26px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:16px 22px;align-content:start}
+.sl-r h4{margin:0 0 6px;font-size:15px;color:var(--c)}.sl-r h4 small{color:var(--muted);font-weight:400;font-size:12px}
+.sl-who{grid-column:1/3}
+.sl .who li{font-size:14px;padding:5px 0 5px 24px}.sl .who li:before{top:11px;left:2px;width:10px;height:6px}
+.sl-get ul{margin:0;padding-left:18px;font-size:14px;line-height:1.75}
+.sl .ptable th,.sl .ptable td{padding:7px 10px}.sl .ptable th b{font-size:14px}.sl .ptable th small{font-size:11.5px}.sl .ptable td{font-size:14px}
+@media (max-width:900px){
+  .deck-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .deck-tabs button{font-size:12px;padding:6px 2px}
+  .sl{grid-template-columns:minmax(0,1fr);min-height:0}
+  .sl-l{padding:18px 18px 16px;gap:6px}.sl-no{font-size:28px}.sl-l h3{font-size:20px}
+  .sl-sub,.sl-steps,.sl-who{display:none}
+  .sl-btns{margin-top:6px}.sl-btns a{padding:8px 12px;font-size:14px}
+  .sl-r{grid-template-columns:minmax(0,1fr);padding:14px 16px 16px;gap:12px}
+  .sl-get ul{font-size:13px;line-height:1.6;columns:2;column-gap:14px}
+}
 /* 휴대폰 9칸 */
 .mgrid{display:none}
 @media (max-width:640px){
