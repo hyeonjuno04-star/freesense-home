@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>○○몰 발주 나누기 | 프리쎈스 제작 샘플</title>
-<meta name="description" content="발주 자동화 샘플 — 쇼핑몰 주문을 거래처별 발주서로 버튼 한 번에 나누는 화면">
+<title>프리쎈스 쇼핑 발주 나누기 | 프리쎈스 제작 샘플</title>
+<meta name="description" content="발주 자동화 샘플 — 프리쎈스 쇼핑 주문을 거래처별 발주서로 버튼 한 번에 나누는 화면">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2316202E'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'>F</text></svg>">
 <style>
@@ -36,23 +36,23 @@ tr.dup td{color:#aaa;text-decoration:line-through}
 .emb .fsbar,.emb .fsend{display:none}
 </style><script>if(window!==top)document.documentElement.className+=" emb"</script></head>
 <body>
-<div class="fsbar"><b>제작 샘플</b><span>○○몰 발주 나누기 · 실제 가게가 아닌 예시입니다</span><a href="../order.html">← 서비스로</a></div>
+<div class="fsbar"><b>제작 샘플</b><span>프리쎈스 쇼핑 발주 나누기 · 프리쎈스를 손님으로 놓고 만든 샘플</span><a href="../order.html">← 서비스로</a></div>
 
-<main class="od-wrap"><h1>오늘 아침 발주</h1><p>○○몰 운영자님 PC 바탕화면의 「발주 나누기」를 실행한 화면입니다.</p>
-<div class="card"><h2>오늘 주문 파일 <small>주문 7건 · 쿠팡·스마트스토어 합침</small></h2>
+<main class="od-wrap"><h1>오늘 아침 발주</h1><p>프리쎈스 사무실 PC 바탕화면의 「발주 나누기」를 실행한 화면입니다.</p>
+<div class="card"><h2>오늘 주문 파일 <small>주문 7건 · 옥션·스마트스토어 합침</small></h2>
 <table><thead><tr><th>주문번호</th><th>상품</th><th>수량</th><th>받는 분</th></tr></thead><tbody>
-<tr><td>A-1021</td><td>국산 들기름 350ml</td><td>2</td><td>김○○</td></tr>
-<tr><td>A-1022</td><td>유기농 현미 4kg</td><td>1</td><td>이○○</td></tr>
-<tr><td>A-1023</td><td>수제 딸기잼 500g</td><td>3</td><td>박○○</td></tr>
-<tr class="dup"><td>A-1019</td><td>국산 들기름 350ml</td><td>1</td><td>최○○ (어제 이미 보냄)</td></tr>
-<tr><td>A-1024</td><td>유기농 현미 4kg</td><td>2</td><td>정○○</td></tr>
-<tr><td>A-1025</td><td>참깨 300g</td><td>1</td><td>강○○</td></tr>
-<tr><td>A-1026</td><td>블루베리잼 500g</td><td>1</td><td>조○○</td></tr></tbody></table></div>
+<tr><td>A-1021</td><td>흑염소 진액 30포</td><td>2</td><td>김○○</td></tr>
+<tr><td>A-1022</td><td>재생 토너 (검정)</td><td>1</td><td>이○○</td></tr>
+<tr><td>A-1023</td><td>A4 복사용지 1박스</td><td>3</td><td>박○○</td></tr>
+<tr class="dup"><td>A-1019</td><td>흑염소 진액 30포</td><td>1</td><td>최○○ (어제 이미 보냄)</td></tr>
+<tr><td>A-1024</td><td>재생 토너 (검정)</td><td>2</td><td>정○○</td></tr>
+<tr><td>A-1025</td><td>흑염소 진액 60포</td><td>1</td><td>강○○</td></tr>
+<tr><td>A-1026</td><td>재생 토너 (컬러)</td><td>1</td><td>조○○</td></tr></tbody></table></div>
 <button class="run" type="button" id="run">▶ 거래처별로 나누기</button>
 <div class="note" id="note">어제 이미 보낸 주문 1건(A-1019)은 빼고 나눴습니다. 거래처별 엑셀 3개가 「오늘 발주」 폴더에 저장됐습니다.</div>
 <div class="out" id="out"></div></main>
 <script>
-var G={"○○기름집":[["A-1021","국산 들기름 350ml",2],["A-1025","참깨 300g",1]],"○○농산":[["A-1022","유기농 현미 4kg",1],["A-1024","유기농 현미 4kg",2]],"○○잼공방":[["A-1023","수제 딸기잼 500g",3],["A-1026","블루베리잼 500g",1]]};
+var G={"○○농장":[["A-1021","흑염소 진액 30포",2],["A-1025","흑염소 진액 60포",1]],"○○토너":[["A-1022","재생 토너 (검정)",1],["A-1024","재생 토너 (검정)",2]],"○○문구":[["A-1023","A4 복사용지 1박스",3],["A-1026","재생 토너 (컬러)",1]]};
 document.getElementById('run').onclick=function(){var o=document.getElementById('out');o.innerHTML='';
  Object.keys(G).forEach(function(k){var h='<div class="card"><h2>'+k+' <span class="tag">발주서.xlsx</span></h2><table><tr><th>주문</th><th>상품</th><th>수량</th></tr>';
  G[k].forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'});o.insertAdjacentHTML('beforeend',h+'</table></div>')});
