@@ -23,7 +23,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}
 .tabs button em{font-style:normal;font-weight:800;margin-right:3px}
 .pages{flex:1 1 auto;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .pages::-webkit-scrollbar{display:none}
-.pg{flex:0 0 100%;scroll-snap-align:start;overflow-y:auto;padding:18px 16px 26px}
+.pg{flex:0 0 100%;min-width:0;scroll-snap-align:start;overflow-y:auto;overflow-x:hidden;padding:18px 16px 26px}
 .ft{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e3e6ea}
 .ft button{border:0;border-radius:12px;padding:13px 0;font-weight:800;font-size:16px}
 .ft .pv{flex:0 0 74px;background:#eef0f3;color:#4d5765}.ft .nx{flex:1;background:var(--c);color:#fff}
@@ -90,6 +90,35 @@ form .agree input{width:20px;height:20px;flex:0 0 auto}
 .pay label:has(input:checked){border-color:var(--c);background:var(--soft);color:var(--c)}
 .pay input{width:18px;height:18px;accent-color:var(--c)}
 .ok b{display:block;font-size:18px;margin-bottom:4px}
+/* PC: 펼쳐 보기 (11/22) */
+@media (min-width:900px){
+body{background:#dfe3e8}
+.app{max-width:1280px;height:100vh;display:grid;grid-template-columns:240px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto}
+.hd{grid-column:1/3;padding:14px 28px 10px}.hd h1{font-size:24px}.hd-1{font-size:14px}
+.tabs{grid-column:1;grid-row:2;flex-direction:column;overflow:auto;border-bottom:0;border-right:1px solid #e3e6ea;padding:18px 14px;gap:6px}
+.tabs button{text-align:left;font-size:16px;padding:11px 14px;border-radius:10px}
+.pages{grid-column:2;grid-row:2}
+.pg{padding:30px 44px 40px;overflow-x:hidden}
+.ft{grid-column:1/3;justify-content:flex-end;padding:12px 28px}
+.ft .pv{flex:0 0 120px}.ft .buy{flex:0 0 260px}.ft .nx{flex:0 0 200px}
+h2{font-size:26px}.lead{font-size:16.5px}
+#p1{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;align-content:start}
+#p1 .cv{grid-row:1/5;padding:40px 34px}#p1 .cv h2{font-size:34px}#p1 .cv p{font-size:17px}
+#p1 .facts,#p1 .proof,#p1 .bigbuy{margin-top:0}#p1 .hint{grid-column:1/-1}
+.chk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.chk label{margin:0;min-height:96px;font-size:16.5px}
+.gl{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.gl div{padding:18px}
+.demo{height:calc(100vh - 290px);min-height:520px}
+#p5{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-content:start}
+#p5>h2,#p5>.lead,#p5>.note{grid-column:1/-1;margin-bottom:0}#p5 .fl{margin-top:0}.dlv-bub{font-size:16.5px}
+.tiers{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.tier{padding:22px 20px;min-height:160px}.tier strong{font-size:28px;margin-top:14px}
+.addon{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.sum{max-width:720px}
+.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.st{flex-direction:column;gap:4px;padding:18px}
+#p7 details{display:inline-block;width:calc(50% - 6px);vertical-align:top;margin-right:6px}
+#p8{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:8px 30px;align-content:start}
+#p8>h2,#p8>.lead{grid-column:1/-1}#p8 .osum{grid-column:2;grid-row:3}#p8 form,#p8 .ok{grid-column:1;grid-row:3/6}
+#p8 .alt{grid-column:2;grid-row:4;align-self:start}#p8 .biz{grid-column:2;grid-row:5;text-align:left}
+}
 </style></head>
 <body><div class="app">
 <header class="hd"><div class="hd-1"><b>FREESENSE · 프리쎈스</b><a href="index.html">상품 8개 보기</a></div><h1>내 주소로 올리기<span class="hd-cnt" id="cnt">1 / 8</span></h1><div class="dots"><button type="button" data-i="0" aria-label="1쪽"></button><button type="button" data-i="1" aria-label="2쪽"></button><button type="button" data-i="2" aria-label="3쪽"></button><button type="button" data-i="3" aria-label="4쪽"></button><button type="button" data-i="4" aria-label="5쪽"></button><button type="button" data-i="5" aria-label="6쪽"></button><button type="button" data-i="6" aria-label="7쪽"></button><button type="button" data-i="7" aria-label="8쪽"></button></div></header>
@@ -122,8 +151,8 @@ form .agree input{width:20px;height:20px;flex:0 0 auto}
 <script>(function(){
 var S=document.getElementById('pages'),N=8,tb=document.querySelectorAll('.tabs button'),dt=document.querySelectorAll('.dots button'),nx=document.getElementById('nx');
 function cur(){return Math.round(S.scrollLeft/S.clientWidth)}
-function go(i){i=Math.max(0,Math.min(N-1,i));S.scrollTo({left:i*S.clientWidth,behavior:'smooth'})}
-function mark(){var i=cur();document.getElementById('cnt').textContent=(i+1)+' / '+N;
+function go(i){i=Math.max(0,Math.min(N-1,i));S.scrollTo({left:i*S.clientWidth,behavior:'smooth'});mark(i);setTimeout(function(){mark()},700)}
+function mark(j){var i=(typeof j==='number')?j:cur();document.getElementById('cnt').textContent=(i+1)+' / '+N;
  tb.forEach(function(b,k){b.classList.toggle('on',k===i)});dt.forEach(function(b,k){b.classList.toggle('on',k<=i)});
  if(tb[i])tb[i].scrollIntoView({block:'nearest',inline:'center'});nx.textContent=i===N-1?'처음으로':'다음 ›';
  try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
