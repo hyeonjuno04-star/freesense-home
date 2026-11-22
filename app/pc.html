@@ -90,6 +90,11 @@ form .agree input{width:20px;height:20px;flex:0 0 auto}
 .pay label:has(input:checked){border-color:var(--c);background:var(--soft);color:var(--c)}
 .pay input{width:18px;height:18px;accent-color:var(--c)}
 .ok b{display:block;font-size:18px;margin-bottom:4px}
+.app{position:relative}
+.arw{position:absolute;top:50%;z-index:15;width:32px;height:54px;margin-top:-10px;border:0;border-radius:10px;background:rgba(28,36,48,.45);color:#fff;font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center}
+.arw.l{left:6px}.arw.r{right:6px}.arw[disabled]{opacity:.15}
+.up{position:absolute;right:16px;bottom:84px;z-index:15;width:50px;height:50px;border:0;border-radius:50%;background:var(--c);color:#fff;font-size:24px;box-shadow:0 6px 16px rgba(0,0,0,.25);display:none}
+.up.show{display:block}
 /* PC: 펼쳐 보기 (11/22) */
 @media (min-width:900px){
 body{background:#dfe3e8}
@@ -100,6 +105,7 @@ body{background:#dfe3e8}
 .pages{grid-column:2;grid-row:2}
 .pg{padding:30px 44px 40px;overflow-x:hidden}
 .ft{grid-column:1/3;justify-content:flex-end;padding:12px 28px}
+.arw{width:56px;height:84px;font-size:40px}.arw.l{left:252px}.arw.r{right:14px}.up{right:28px;bottom:96px;width:56px;height:56px}
 .ft .pv{flex:0 0 120px}.ft .buy{flex:0 0 260px}.ft .nx{flex:0 0 200px}
 h2{font-size:26px}.lead{font-size:16.5px}
 #p1{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;align-content:start}
@@ -146,19 +152,24 @@ h2{font-size:26px}.lead{font-size:16.5px}
 <iframe name="sink" id="sink" title="접수" style="display:none"></iframe>
 <div class="alt"><a class="k" href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener">카카오톡으로 묻기</a><a class="t" href="tel:01046825900">전화 010-4682-5900</a></div>
 <p class="biz">프리쎈스 · 대표 노현주 · 사업자등록번호 552-06-03586 · 통신판매업 2025-인천남동구-2045<br>인천 남동구 담방로21번길 55 뉴서울아파트상가 2층 225호</p></section></main>
+<button type="button" class="arw l" id="al" aria-label="이전 쪽">‹</button><button type="button" class="arw r" id="ar" aria-label="다음 쪽">›</button><button type="button" class="up" id="up" aria-label="맨 위로">▲</button>
 <footer class="ft"><button type="button" class="pv" id="pv">‹ 이전</button><button type="button" class="buy go8">구매하기</button><button type="button" class="nx" id="nx">다음 ›</button></footer>
 </div>
 <script>(function(){
 var S=document.getElementById('pages'),N=8,tb=document.querySelectorAll('.tabs button'),dt=document.querySelectorAll('.dots button'),nx=document.getElementById('nx');
 function cur(){return Math.round(S.scrollLeft/S.clientWidth)}
 function go(i){i=Math.max(0,Math.min(N-1,i));S.scrollTo({left:i*S.clientWidth,behavior:'smooth'});mark(i);setTimeout(function(){mark()},700)}
-function mark(j){var i=(typeof j==='number')?j:cur();document.getElementById('cnt').textContent=(i+1)+' / '+N;
+function mark(j){var i=(typeof j==='number')?j:cur();var al=document.getElementById('al'),ar=document.getElementById('ar');if(al){al.disabled=i===0;ar.disabled=i===N-1;upck&&setTimeout(upck,0)}document.getElementById('cnt').textContent=(i+1)+' / '+N;
  tb.forEach(function(b,k){b.classList.toggle('on',k===i)});dt.forEach(function(b,k){b.classList.toggle('on',k<=i)});
  if(tb[i])tb[i].scrollIntoView({block:'nearest',inline:'center'});nx.textContent=i===N-1?'처음으로':'다음 ›';
  try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
 S.addEventListener('scroll',function(){clearTimeout(S._t);S._t=setTimeout(mark,70)},{passive:true});
 tb.forEach(function(b){b.onclick=function(){go(+b.dataset.i)}});dt.forEach(function(b){b.onclick=function(){go(+b.dataset.i)}});
-document.getElementById('pv').onclick=function(){go(cur()-1)};nx.onclick=function(){var i=cur();go(i===N-1?0:i+1)};
+document.getElementById('pv').onclick=function(){go(cur()-1)};document.getElementById('al').onclick=function(){go(cur()-1)};document.getElementById('ar').onclick=function(){go(cur()+1)};
+var up=document.getElementById('up'),PG=document.querySelectorAll('.pg');
+function upck(){var p=PG[cur()];up.classList.toggle('show',!!p&&p.scrollTop>80)}
+PG.forEach(function(p){p.addEventListener('scroll',upck,{passive:true})});up.onclick=function(){PG[cur()].scrollTo({top:0,behavior:'smooth'})};
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if(e.key==='Home'||(e.key==='ArrowUp'&&e.ctrlKey))PG[cur()].scrollTo({top:0,behavior:'smooth'})});nx.onclick=function(){var i=cur();go(i===N-1?0:i+1)};
 document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)});
 var wc=document.querySelectorAll('.wc'),res=document.getElementById('res');
 wc.forEach(function(c){c.onchange=function(){var n=[].filter.call(wc,function(x){return x.checked}).length;
