@@ -340,3 +340,22 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
   @page{size:A4;margin:8mm}
   .pd-sec{padding:10px 0}.who li{padding:3px 0 3px 24px;font-size:12px}.st{padding:4px 10px}.steps4{gap:5px}.ptable th,.ptable td{padding:4px 10px}.ptable th small{font-size:11px}.pd-hero{padding:16px 0 14px}.gi b{font-size:12px;margin-bottom:0}.fq b{font-size:12px}
 }
+/* 11/22 전달 샘플 */
+#deliver h2 small{font-size:14px;font-weight:700;color:#fff;background:var(--c);border-radius:20px;padding:3px 10px;margin-left:6px;vertical-align:middle}
+.dlv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:start}
+.dlv-chat{background:#BACEE0;border-radius:16px;padding:16px;box-shadow:0 8px 22px rgba(15,21,30,.10)}
+.dlv-top{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#2b3a4a;margin-bottom:10px}
+.dlv-top b{font-size:15px}
+.dlv-bub{background:#FEE500;border-radius:4px 16px 16px 16px;padding:14px 16px;color:#1d1d1d;line-height:1.65;font-size:15.5px}
+.dlv-bub small{display:block;font-weight:700;margin-bottom:6px;color:#4a4300}
+.dlv-bub p{margin:0 0 4px}
+.dlv-files{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:14px;padding:18px 20px}
+.dlv-files h3{margin:0 0 10px;font-size:17px}
+.dlv-files ul{list-style:none;margin:0;padding:0}
+.dlv-files li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.dlv-files li:first-child{border-top:0}
+.dlv-files em{flex:0 0 auto;font-style:normal;font-weight:800;font-size:12px;color:#fff;background:var(--c);border-radius:6px;padding:4px 7px;min-width:44px;text-align:center}
+.dlv-files b{display:block;font-size:15px;word-break:break-all}
+.dlv-files span{display:block;font-size:14px;color:#5a6472;line-height:1.5}
+@media (max-width:760px){.dlv{grid-template-columns:1fr}}
+@media print{.dlv-chat{box-shadow:none}}
