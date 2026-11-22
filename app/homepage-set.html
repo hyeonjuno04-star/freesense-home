@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>가게 홈페이지 세트 | 프리쎈스</title>
+<meta name="description" content="휴대폰에 맞춘 가게 홈페이지를 만들고, 사장님 주소(도메인)와 자물쇠(https), 서버 1년까지 한 번에 연결합니다. 질문지만 채워 주시면 5일 안에 엽니다.">
+<meta property="og:title" content="가게 홈페이지 세트 — 검색하면 나오는 홈페이지를 내 주소로"><meta property="og:description" content="가게 이름을 검색하면, 우리 가게 홈페이지가 내 주소로 나옵니다. 8쪽으로 보고, 가격 비교하고, 바로 신청하세요.">
+<meta name="theme-color" content="#2F7D6D"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2316202E'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'>F</text></svg>">
+<style>:root{--c:#2F7D6D;--soft:#2F7D6D14}*{box-sizing:border-box;margin:0}html,body{height:100%}
+body{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#1c2430;background:#e9ecef;line-height:1.6;word-break:keep-all;-webkit-text-size-adjust:100%}
+a{color:inherit}button{font:inherit;cursor:pointer}
+.app{max-width:560px;height:100%;margin:0 auto;background:#f6f7f9;display:flex;flex-direction:column;box-shadow:0 0 30px rgba(0,0,0,.08)}
+.hd{background:var(--c);color:#fff;padding:10px 16px 8px;flex:0 0 auto}
+.hd-1{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px}
+.hd-1 b{font-size:14px;letter-spacing:.5px}.hd-1 a{text-decoration:none;opacity:.9;white-space:nowrap}
+.hd h1{font-size:19px;margin:4px 0 6px;line-height:1.3}
+.dots{display:flex;gap:4px}.dots button{flex:1;height:5px;border:0;border-radius:3px;background:rgba(255,255,255,.35);padding:0}
+.dots button.on{background:#fff}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:#fff;border-bottom:1px solid #e3e6ea;flex:0 0 auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{white-space:nowrap;border:1px solid #dfe3e8;background:#fff;border-radius:18px;padding:5px 11px;font-size:13.5px;color:#4d5765}
+.tabs button.on{background:var(--c);border-color:var(--c);color:#fff;font-weight:700}
+.tabs button em{font-style:normal;font-weight:800;margin-right:3px}
+.pages{flex:1 1 auto;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pages::-webkit-scrollbar{display:none}
+.pg{flex:0 0 100%;min-width:0;scroll-snap-align:start;overflow-y:auto;overflow-x:hidden;padding:18px 16px 26px}
+.ft{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e3e6ea}
+.ft button{border:0;border-radius:12px;padding:13px 0;font-weight:800;font-size:16px}
+.ft .pv{flex:0 0 74px;background:#eef0f3;color:#4d5765}.ft .nx{flex:1;background:var(--c);color:#fff}
+.ft .cnt{flex:0 0 auto;font-size:13px;color:#7a8492;min-width:38px;text-align:center}
+h2{font-size:21px;margin-bottom:10px;line-height:1.35}
+.lead{color:#5a6472;margin-bottom:14px;font-size:15px}
+.cv{background:var(--c);color:#fff;border-radius:18px;padding:26px 20px;background-image:linear-gradient(150deg,rgba(255,255,255,.14),rgba(0,0,0,.16))}
+.cv small{font-weight:700;opacity:.9}.cv h2{font-size:26px;margin:8px 0}.cv p{opacity:.95}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.facts div{background:#fff;border-radius:12px;padding:12px 6px;text-align:center;border:1px solid #e3e6ea}
+.facts b{display:block;color:var(--c);font-size:17px}.facts span{font-size:12.5px;color:#5a6472}
+.hint{margin-top:14px;text-align:center;color:#7a8492;font-size:14px}
+.chk label{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1.5px solid #e3e6ea;border-radius:12px;padding:14px;margin-bottom:8px;font-size:15.5px}
+.chk input{width:22px;height:22px;flex:0 0 auto;accent-color:var(--c);margin-top:1px}
+.chk label:has(input:checked){border-color:var(--c);background:var(--soft)}
+.res{margin-top:10px;border-radius:12px;padding:14px;background:#fff;border:1px dashed var(--c);font-weight:700;color:var(--c)}
+.gl{display:grid;gap:8px}.gl div{background:#fff;border:1px solid #e3e6ea;border-left:4px solid var(--c);border-radius:12px;padding:12px 14px}
+.gl b{display:block;font-size:16px}.gl span{font-size:14.5px;color:#5a6472}
+.demo{width:100%;height:560px;border:1px solid #dfe3e8;border-radius:14px;background:#fff}
+.dlv-chat{background:#BACEE0;border-radius:16px;padding:14px}
+.dlv-top{display:flex;justify-content:space-between;font-size:13px;color:#2b3a4a;margin-bottom:8px}
+.dlv-bub{background:#FEE500;border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:15px;line-height:1.6}
+.dlv-bub small{display:block;font-weight:700;margin-bottom:4px;color:#4a4300}
+.fl{list-style:none;padding:0;margin-top:12px;display:grid;gap:8px}
+.fl li{display:flex;gap:10px;background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:11px 12px}
+.fl em{flex:0 0 auto;font-style:normal;font-weight:800;font-size:12px;color:#fff;background:var(--c);border-radius:6px;padding:3px 7px;height:fit-content;min-width:42px;text-align:center}
+.fl b{display:block;font-size:15px;word-break:break-all}.fl span{font-size:13.5px;color:#5a6472}
+.tiers{display:grid;gap:10px}
+.tier{display:block;width:100%;text-align:left;background:#fff;border:2px solid #e3e6ea;border-radius:14px;padding:14px 16px;position:relative}
+.tier b{display:block;font-size:17px}.tier small{display:block;color:#5a6472;font-size:14px;margin-top:2px}
+.tier strong{display:block;font-size:22px;color:var(--c);margin-top:6px}
+.tier.on{border-color:var(--c);background:var(--soft)}
+.tier.on:after{content:"선택됨";position:absolute;right:12px;top:12px;background:var(--c);color:#fff;font-size:12px;font-weight:800;border-radius:10px;padding:2px 8px}
+.addon label{display:flex;gap:10px;align-items:center;background:#fff;border:1px dashed #cfd5dc;border-radius:12px;padding:12px 14px;margin-top:10px;font-size:15px}
+.addon input{width:20px;height:20px;accent-color:var(--c)}
+.sum{margin-top:12px;background:#1c2430;color:#fff;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sum b{font-size:20px}.sum span{font-size:13.5px;opacity:.85}
+.note{font-size:13px;color:#7a8492;margin-top:8px}
+.steps{display:grid;gap:8px;margin-bottom:18px}
+.st{display:flex;gap:12px;background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:12px 14px}
+.st em{font-style:normal;font-weight:900;color:var(--c);font-size:18px}.st b{display:block}.st span{font-size:14px;color:#5a6472}
+details{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:12px 14px;margin-bottom:8px}
+summary{font-weight:700;cursor:pointer}details p{margin-top:6px;color:#4d5765;font-size:15px}
+form label{display:block;font-weight:700;font-size:14.5px;margin:10px 0 4px}
+form input,form textarea{width:100%;padding:12px;border:1px solid #cfd5dc;border-radius:10px;font:inherit;font-size:16px;background:#fff}
+form .agree{display:flex;gap:8px;font-weight:400;font-size:13.5px;color:#4d5765;align-items:flex-start}
+form .agree input{width:20px;height:20px;flex:0 0 auto}
+.send{width:100%;margin-top:14px;background:var(--c);color:#fff;border:0;border-radius:12px;padding:15px;font-weight:800;font-size:17px}
+.hp{position:absolute;left:-9999px}
+.ok{display:none;background:#E9F6EC;border:1px solid #9fd3ab;color:#1f6b31;border-radius:12px;padding:14px;font-weight:700;margin-top:12px}
+.alt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.alt a{text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:13px 6px;font-size:15px}
+.alt .k{background:#FEE500;color:#1c1c1c}.alt .t{background:#fff;border:1.5px solid var(--c);color:var(--c)}
+.biz{font-size:12px;color:#8a93a0;text-align:center;margin-top:18px}
+.ft .buy{flex:1.2;background:#FF6B2C;color:#fff}.ft .nx{flex:1}
+.hd-cnt{font-size:12.5px;opacity:.85;font-weight:600;margin-left:6px}
+.proof{display:block;margin-top:12px;background:#fff;border:1px solid #e3e6ea;border-radius:14px;padding:14px 16px;text-decoration:none}
+.proof small{color:var(--c);font-weight:800}.proof b{display:block;font-size:16px;margin-top:2px}.proof span{font-size:13.5px;color:#5a6472}
+.bigbuy{display:block;width:100%;margin-top:12px;border:0;border-radius:14px;padding:16px;background:#FF6B2C;color:#fff;font-weight:900;font-size:18px}
+.osum{background:var(--soft);border:1.5px solid var(--c);border-radius:14px;padding:14px 16px;margin-bottom:6px}
+.osum small{color:var(--c);font-weight:800}.osum b{display:block;font-size:17px;margin-top:2px}.osum a{font-size:13.5px;color:var(--c);font-weight:700}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pay label{display:flex;gap:8px;align-items:center;justify-content:center;margin:0;background:#fff;border:1.5px solid #cfd5dc;border-radius:12px;padding:12px 6px;font-weight:700}
+.pay label:has(input:checked){border-color:var(--c);background:var(--soft);color:var(--c)}
+.pay input{width:18px;height:18px;accent-color:var(--c)}
+.ok b{display:block;font-size:18px;margin-bottom:4px}
+.app{position:relative}
+.dts{display:flex;gap:8px;margin-bottom:10px}.dts button{flex:1;border:1.5px solid var(--c);background:#fff;color:var(--c);border-radius:12px;padding:11px 6px;font-weight:800;font-size:15px}.dts button.on{background:var(--c);color:#fff}
+.arw{position:absolute;top:50%;z-index:15;width:32px;height:54px;margin-top:-10px;border:0;border-radius:10px;background:rgba(28,36,48,.45);color:#fff;font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center}
+.arw.l{left:6px}.arw.r{right:6px}.arw[disabled]{opacity:.15}
+.up{position:absolute;right:16px;bottom:84px;z-index:15;width:50px;height:50px;border:0;border-radius:50%;background:var(--c);color:#fff;font-size:24px;box-shadow:0 6px 16px rgba(0,0,0,.25);display:none}
+.up.show{display:block}
+/* PC: 펼쳐 보기 (11/22) */
+@media (min-width:900px){
+body{background:#dfe3e8}
+.app{max-width:1280px;height:100vh;display:grid;grid-template-columns:240px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto}
+.hd{grid-column:1/3;padding:14px 28px 10px}.hd h1{font-size:24px}.hd-1{font-size:14px}
+.tabs{grid-column:1;grid-row:2;flex-direction:column;overflow:auto;border-bottom:0;border-right:1px solid #e3e6ea;padding:18px 14px;gap:6px}
+.tabs button{text-align:left;font-size:16px;padding:11px 14px;border-radius:10px}
+.pages{grid-column:2;grid-row:2}
+.pg{padding:30px 80px 40px;overflow-x:hidden}
+.ft{grid-column:1/3;justify-content:flex-end;padding:12px 28px}
+.arw{width:56px;height:84px;font-size:40px}.arw.l{left:252px}.arw.r{right:14px}.up{right:28px;bottom:96px;width:56px;height:56px}
+.ft .pv{flex:0 0 120px}.ft .buy{flex:0 0 260px}.ft .nx{flex:0 0 200px}
+h2{font-size:26px}.lead{font-size:16.5px}
+#p1{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;align-content:start}
+#p1 .cv{grid-row:1/5;padding:40px 34px}#p1 .cv h2{font-size:34px}#p1 .cv p{font-size:17px}
+#p1 .facts,#p1 .proof,#p1 .bigbuy{margin-top:0}#p1 .hint{grid-column:1/-1}
+.chk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.chk label{margin:0;min-height:96px;font-size:16.5px}
+.gl{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.gl div{padding:18px}
+.demo{height:calc(100vh - 290px);min-height:520px}
+#p5{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-content:start}
+#p5>h2,#p5>.lead,#p5>.note{grid-column:1/-1;margin-bottom:0}#p5 .fl{margin-top:0}.dlv-bub{font-size:16.5px}
+.tiers{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.tier{padding:22px 20px;min-height:160px}.tier strong{font-size:28px;margin-top:14px}
+.addon{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.sum{max-width:720px}
+.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.st{flex-direction:column;gap:4px;padding:18px}
+#p7 details{display:inline-block;width:calc(50% - 6px);vertical-align:top;margin-right:6px}
+#p8{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:8px 30px;align-content:start}
+#p8>h2,#p8>.lead{grid-column:1/-1}#p8 .osum{grid-column:2;grid-row:3}#p8 form,#p8 .ok{grid-column:1;grid-row:3/6}
+#p8 .alt{grid-column:2;grid-row:4;align-self:start}#p8 .biz{grid-column:2;grid-row:5;text-align:left}
+}
+</style></head>
+<body><div class="app">
+<header class="hd"><div class="hd-1"><b>FREESENSE · 프리쎈스</b><a href="index.html">상품 4개 보기</a></div><h1>가게 홈페이지 세트<span class="hd-cnt" id="cnt">1 / 8</span></h1><div class="dots"><button type="button" data-i="0" aria-label="1쪽"></button><button type="button" data-i="1" aria-label="2쪽"></button><button type="button" data-i="2" aria-label="3쪽"></button><button type="button" data-i="3" aria-label="4쪽"></button><button type="button" data-i="4" aria-label="5쪽"></button><button type="button" data-i="5" aria-label="6쪽"></button><button type="button" data-i="6" aria-label="7쪽"></button><button type="button" data-i="7" aria-label="8쪽"></button></div></header>
+<nav class="tabs" aria-label="쪽 고르기"><button type="button" data-i="0"><em>1</em>한눈에</button><button type="button" data-i="1"><em>2</em>이런 분께</button><button type="button" data-i="2"><em>3</em>받으시는 것</button><button type="button" data-i="3"><em>4</em>직접 써 보기</button><button type="button" data-i="4"><em>5</em>이렇게 전달돼요</button><button type="button" data-i="5"><em>6</em>가격 비교</button><button type="button" data-i="6"><em>7</em>진행·질문</button><button type="button" data-i="7"><em>8</em>구매하기</button></nav>
+<main class="pages" id="pages"><section class="pg" id="p1" aria-label="1쪽 한눈에"><div class="cv"><small>SERVICE 01 · 홈페이지 + 내 주소 연결</small><h2>가게 이름을 검색하면,<br>우리 가게 홈페이지가 내 주소로 나옵니다.</h2><p>휴대폰에 맞춘 가게 홈페이지를 만들고, 사장님 주소(도메인)와 자물쇠(https), 서버 1년까지 한 번에 연결합니다. 질문지만 채워 주시면 5일 안에 엽니다.</p></div>
+<div class="facts"><div><b>150,000원~</b><span>시작 가격</span></div><div><b>5일 안</b><span>완성 기한</span></div><div><b>고객 소유</b><span>결과물</span></div></div>
+<a class="proof" href="https://360efons.com/" target="_blank" rel="noopener"><small>실제로 만든 곳</small><b>360e폰즈 회사 홈페이지 →</b><span>칫솔 전문 회사 · 8페이지 · 2026년 11월 공개</span></a>
+<button type="button" class="bigbuy go8">바로 구매하기</button>
+<p class="hint">옆으로 넘기면 8쪽 안내가 이어져요</p></section><section class="pg" id="p2" aria-label="2쪽 이런 분께"><h2>이런 분께 맞아요</h2><p class="lead">해당되는 것을 눌러 보세요.</p><div class="chk"><label><input type="checkbox" class="wc"><span>지도 앱 정보만으로는 가게 분위기가 전해지지 않는 곳</span></label><label><input type="checkbox" class="wc"><span>홈페이지 파일이나 도메인은 있는데 인터넷에 못 올린 분</span></label><label><input type="checkbox" class="wc"><span>제작 업체에 맡겼다가 수정 한 번에 비용이 붙어 지친 곳</span></label></div><div class="res" id="res">하나라도 해당되면 상담해 보실 만해요.</div></section><section class="pg" id="p3" aria-label="3쪽 받으시는 것"><h2>받으시는 것</h2><p class="lead">가격 안에 들어 있는 것들이에요.</p><div class="gl"><div><b>휴대폰 맞춤 화면</b><span>휴대폰·태블릿·PC 어디서 열어도 글씨와 사진이 맞게 정리됩니다.</span></div><div><b>전화·길찾기·카톡 버튼</b><span>누르면 바로 전화, 지도, 카카오톡 상담으로 이어집니다.</span></div><div><b>내 주소 + 자물쇠(https)</b><span>사장님 도메인을 연결하고 안전한 주소로 엽니다.</span></div><div><b>서버 1년 포함</b><span>서울 클라우드 서버에 올리고 1년 서버비를 받지 않습니다.</span></div><div><b>검색 등록</b><span>구글·네이버에 가게가 잡히도록 기본 정보를 등록합니다.</span></div><div><b>매일 백업 · 5분 점검</b><span>멈추면 저희가 먼저 알고 다시 살립니다.</span></div><div><b>원본 파일 전달</b><span>완성 파일을 드립니다. 다른 곳으로 옮겨도 그대로 씁니다.</span></div><div><b>완성형 덤</b><span>문의 알림 + 홍보 쇼츠 1편 + 관리 3개월 무료.</span></div></div></section><section class="pg" id="p4" aria-label="4쪽 직접 써 보기"><h2>직접 써 보기</h2><p class="lead">프리쎈스를 손님으로 놓고 실제로 만들어 본 모습이에요. 눌러 보고 움직여 보세요.</p><div class="dts"><button type="button" class="dt on" data-s="../samples/bunsik.html">완성된 홈페이지</button><button type="button" class="dt" data-s="../samples/gongbang.html">주소 연결 현황</button></div><iframe class="demo" id="demo" src="../samples/bunsik.html" title="샘플" loading="lazy"></iframe></section><section class="pg" id="p5" aria-label="5쪽 이렇게 전달돼요"><h2>이렇게 전달돼요</h2><p class="lead">완성하는 날 사장님 휴대폰으로 이렇게 갑니다.</p>
+<div class="dlv-chat"><div class="dlv-top"><b>프리쎈스</b><span>공개하는 날 · 카카오톡</span></div><div class="dlv-bub"><small>프리쎈스 대표님께</small>대표님, 프리쎈스 홈페이지가 열렸습니다.<br>주소: freesense.kr (자물쇠까지 확인했습니다)<br>휴대폰으로 한 번 눌러 보시고, 내용이 맞는지 봐 주세요.<br>문의가 들어오면 이 카톡으로 바로 알림이 갑니다.<br>원본 파일과 사용 안내서는 아래에 붙였습니다.</div></div><ul class="fl"><li><em>주소</em><div><b>freesense.kr</b><span>휴대폰·PC에서 바로 열리는 주소 (https 자물쇠)</span></div></li><li><em>ZIP</em><div><b>홈페이지_원본.zip</b><span>완성된 홈페이지 파일 전체</span></div></li><li><em>PDF</em><div><b>사용안내_1장.pdf</b><span>사진·메뉴 바꿀 때 연락하는 법, 문의 알림 보는 법</span></div></li><li><em>백업</em><div><b>매일 새벽 백업</b><span>7일치 보관 · 되돌리기는 카톡 한 줄로</span></div></li></ul><p class="note">※ 프리쎈스를 손님으로 놓고 만든 예시입니다.</p></section><section class="pg" id="p6" aria-label="6쪽 가격 비교"><h2>가격 비교</h2><p class="lead">눌러서 골라 보세요. 부가세 포함이에요.</p><div class="tiers"><button type="button" class="tier on" data-n="기본형 · 3페이지" data-p="150,000원"><b>기본형 · 3페이지</b><small>메인·소개·오시는 길 · 주소 연결 · 서버 1년 · 수정 2회</small><strong>150,000원</strong></button><button type="button" class="tier" data-n="표준형 · 5페이지" data-p="250,000원"><b>표준형 · 5페이지</b><small>+ 메뉴·가격·갤러리 · 수정 3회</small><strong>250,000원</strong></button><button type="button" class="tier" data-n="완성형 · 8페이지" data-p="350,000원"><b>완성형 · 8페이지</b><small>+ 후기·문의 알림 · 쇼츠 1편 · 관리 3개월 무료 · 수정 5회</small><strong>350,000원</strong></button></div><div class="addon"><label><input type="checkbox" class="ad" data-n="업그레이드 관리" data-p="월 10,000원"><span><b>업그레이드 관리</b> · 메뉴·사진 교체, 화면 손보기 · 월 10,000원</span></label></div>
+<div class="sum"><div><span>고른 것</span><br><b id="sel"></b></div><button type="button" class="tier-go" style="background:#fff;color:#1c2430;border:0;border-radius:10px;padding:10px 14px;font-weight:800">이걸로 구매 →</button></div><p class="note">도메인 구입비(1년 2만 원 안팎)는 따로입니다. 구입부터 맡기셔도 됩니다.</p></section><section class="pg" id="p7" aria-label="7쪽 진행·질문"><h2>진행 순서</h2><div class="steps"><div class="st"><em>1</em><div><b>질문지</b><span>가게 이름·메뉴·사진을 질문지에 채워 주세요.</span></div></div><div class="st"><em>2</em><div><b>첫 시안</b><span>2일 안에 휴대폰 화면 시안을 보내 드립니다.</span></div></div><div class="st"><em>3</em><div><b>수정</b><span>말씀하신 부분을 정해진 횟수 안에서 고칩니다.</span></div></div><div class="st"><em>4</em><div><b>주소 연결·공개</b><span>내 주소와 자물쇠까지 연결해 5일 안에 엽니다.</span></div></div></div><h2>자주 묻는 질문</h2><details><summary>홈페이지 파일은 누구 것인가요?</summary><p>완성 후 파일을 사장님께 드립니다. 원본은 저희도 보관해 수정 요청에 바로 대응합니다.</p></details><details><summary>도메인이 없으면요?</summary><p>원하시는 주소를 같이 골라 구입부터 대신 해 드립니다.</p></details><details><summary>사진이 없으면요?</summary><p>휴대폰 사진이면 충분합니다. 밝기와 크기는 저희가 맞춥니다.</p></details></section><section class="pg" id="p8" aria-label="8쪽 구매하기"><h2>구매하기</h2><p class="lead">주문을 넣으시면 결제 안내를 문자·카톡으로 바로 보내 드려요.</p>
+<div class="osum"><small>고른 상품</small><b id="sel2"></b><a href="#6" class="go6">다른 걸로 바꾸기</a></div>
+<form id="f" method="post" action="https://app.m2g.kr/api/lead" target="sink">
+<input type="hidden" name="site" value="freesense"><input type="hidden" name="kind" value="가게 홈페이지 세트">
+<label for="n">성함·상호</label><input id="n" name="name" required maxlength="50" autocomplete="name">
+<label for="ph">연락처</label><input id="ph" name="phone" required maxlength="30" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000">
+<label>결제 방법</label><div class="pay"><label><input type="radio" name="payway" value="계좌이체" checked> 계좌이체</label><label><input type="radio" name="payway" value="카드 결제 링크"> 카드 결제</label></div>
+<label class="agree" style="margin-top:10px"><input type="checkbox" id="tax"> 세금계산서가 필요해요</label>
+<label for="b">요청 사항 <small style="font-weight:400">(선택)</small></label><textarea id="b" rows="3" maxlength="1500" placeholder="원하는 날짜, 참고할 사이트 등"></textarea>
+<input type="hidden" name="body" id="body">
+<label class="hp" aria-hidden="true">비워 두세요<input name="website" tabindex="-1" autocomplete="off"></label>
+<label class="agree"><input type="checkbox" name="agree" value="yes" required> 개인정보 수집·이용에 동의합니다. (성함·연락처·주문 내용, 주문 처리 목적, 1년 보관)</label>
+<button class="send" type="submit" id="sendbtn">구매하기</button></form>
+<div class="ok" id="ok"><b>주문이 들어왔어요 🙌</b>주문번호 <span id="ono"></span><br>결제 안내를 문자·카톡으로 보내 드릴게요. 결제가 확인되면 바로 작업을 시작해요.</div>
+<iframe name="sink" id="sink" title="접수" style="display:none"></iframe>
+<div class="alt"><a class="k" href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener">카카오톡으로 묻기</a><a class="t" href="tel:01046825900">전화 010-4682-5900</a></div>
+<p class="biz">프리쎈스 · 대표 노현주 · 사업자등록번호 552-06-03586 · 통신판매업 2025-인천남동구-2045<br>인천 남동구 담방로21번길 55 뉴서울아파트상가 2층 225호</p></section></main>
+<button type="button" class="arw l" id="al" aria-label="이전 쪽">‹</button><button type="button" class="arw r" id="ar" aria-label="다음 쪽">›</button><button type="button" class="up" id="up" aria-label="맨 위로">▲</button>
+<footer class="ft"><button type="button" class="pv" id="pv">‹ 이전</button><button type="button" class="buy go8">구매하기</button><button type="button" class="nx" id="nx">다음 ›</button></footer>
+</div>
+<script>(function(){
+var S=document.getElementById('pages'),N=8,tb=document.querySelectorAll('.tabs button'),dt=document.querySelectorAll('.dots button'),nx=document.getElementById('nx');
+function cur(){return Math.round(S.scrollLeft/S.clientWidth)}
+function go(i){i=Math.max(0,Math.min(N-1,i));S.scrollTo({left:i*S.clientWidth,behavior:'smooth'});mark(i);setTimeout(function(){mark()},700)}
+function mark(j){var i=(typeof j==='number')?j:cur();var al=document.getElementById('al'),ar=document.getElementById('ar');if(al){al.disabled=i===0;ar.disabled=i===N-1;upck&&setTimeout(upck,0)}document.getElementById('cnt').textContent=(i+1)+' / '+N;
+ tb.forEach(function(b,k){b.classList.toggle('on',k===i)});dt.forEach(function(b,k){b.classList.toggle('on',k<=i)});
+ if(tb[i])tb[i].scrollIntoView({block:'nearest',inline:'center'});nx.textContent=i===N-1?'처음으로':'다음 ›';
+ try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+S.addEventListener('scroll',function(){clearTimeout(S._t);S._t=setTimeout(mark,70)},{passive:true});
+tb.forEach(function(b){b.onclick=function(){go(+b.dataset.i)}});dt.forEach(function(b){b.onclick=function(){go(+b.dataset.i)}});
+document.getElementById('pv').onclick=function(){go(cur()-1)};document.getElementById('al').onclick=function(){go(cur()-1)};document.getElementById('ar').onclick=function(){go(cur()+1)};
+var up=document.getElementById('up'),PG=document.querySelectorAll('.pg');
+function upck(){var p=PG[cur()];up.classList.toggle('show',!!p&&p.scrollTop>80)}
+PG.forEach(function(p){p.addEventListener('scroll',upck,{passive:true})});up.onclick=function(){PG[cur()].scrollTo({top:0,behavior:'smooth'})};
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if(e.key==='Home'||(e.key==='ArrowUp'&&e.ctrlKey))PG[cur()].scrollTo({top:0,behavior:'smooth'})});nx.onclick=function(){var i=cur();go(i===N-1?0:i+1)};
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)});
+document.querySelectorAll('.dt').forEach(function(b){b.onclick=function(){document.querySelectorAll('.dt').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById('demo').src=b.dataset.s}});
+var wc=document.querySelectorAll('.wc'),res=document.getElementById('res');
+wc.forEach(function(c){c.onchange=function(){var n=[].filter.call(wc,function(x){return x.checked}).length;
+ res.textContent=n===0?'하나라도 해당되면 상담해 보실 만해요.':(n+'개 해당돼요. 이 상품이 맞는 분이에요 → 6쪽에서 가격을 골라 보세요.')}});
+var T=document.querySelectorAll('.tier'),A=document.querySelectorAll('.ad'),sel=document.getElementById('sel'),body=document.getElementById('b');
+function pick(){var t=document.querySelector('.tier.on'),s=t.dataset.n+' '+t.dataset.p;A.forEach(function(a){if(a.checked)s+=' + '+a.dataset.n+' '+a.dataset.p});
+ sel.textContent=s;document.getElementById('sel2').textContent='가게 홈페이지 세트 · '+s;document.getElementById('sendbtn').textContent='구매하기 · '+t.dataset.p}
+T.forEach(function(t){t.onclick=function(){T.forEach(function(x){x.classList.remove('on')});t.classList.add('on');pick()}});A.forEach(function(a){a.onchange=pick});
+document.querySelector('.tier-go').onclick=function(){go(7)};document.querySelectorAll('.go8').forEach(function(b){b.onclick=function(){go(7)}});
+document.querySelector('.go6').onclick=function(e){e.preventDefault();go(5)};pick();
+var f=document.getElementById('f'),sent=false,d=new Date(),ono='F'+(d.getMonth()+101+'').slice(1)+(d.getDate()+100+'').slice(1)+'-'+Math.floor(1000+Math.random()*9000);
+f.addEventListener('submit',function(){sent=true;var pw=f.querySelector('input[name=payway]:checked').value;
+ document.getElementById('body').value='[구매 '+ono+'] '+document.getElementById('sel2').textContent+'\n결제: '+pw+(document.getElementById('tax').checked?' · 세금계산서 필요':'')+'\n요청: '+(body.value||'없음')});
+document.getElementById('sink').addEventListener('load',function(){if(!sent)return;f.style.display='none';document.getElementById('ono').textContent=ono;document.getElementById('ok').style.display='block'});
+var h=location.hash.match(/^#([1-8])$/);if(h)setTimeout(function(){S.scrollLeft=(+h[1]-1)*S.clientWidth;mark()},60);else mark();
+addEventListener('resize',function(){var i=+(document.getElementById('cnt').textContent.split(' ')[0])-1;S.scrollLeft=i*S.clientWidth});
+})();</script>
+</body></html>
