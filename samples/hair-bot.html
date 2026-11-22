@@ -34,7 +34,7 @@ a{color:inherit}img{max-width:100%}
 .cb-note{font-size:13.5px;color:#5a6472;text-align:center;margin:10px 0 0}
 
 .emb .fsbar,.emb .fsend{display:none}
-</style><script>if(window!==top)document.documentElement.className+=" emb"</script></head>
+</style><script>if(window!==top||location.search.indexOf("shot")>-1)document.documentElement.className+=" emb"</script></head>
 <body>
 <div class="fsbar"><b>제작 샘플</b><span>프리쎈스 카톡 상담 챗봇 · 프리쎈스를 손님으로 놓고 만든 샘플</span><a href="../chatbot.html">← 서비스로</a></div>
 
@@ -49,9 +49,9 @@ a{color:inherit}img{max-width:100%}
 <script>
 var A=[
  ["상담 시간","평일 09:00~18:00에 상담해요.\n밤이나 주말에 남기신 글은 다음 날 아침에 먼저 연락드려요.",["시간","영업","몇 시","언제","주말"]],
- ["홈페이지 가격","3페이지 150,000원 · 5페이지 250,000원 · 8페이지 350,000원이에요.\n관리는 월 10,000원, 첫 달은 무료예요.",["가격","얼마","비용","홈페이지"]],
+ ["견적 문의","가게 규모와 필요한 걸 알려 주시면 맞는 구성과 금액을 바로 안내해 드려요.\n상담은 무료예요.",["가격","얼마","비용","견적"]],
  ["며칠 걸려요?","질문지를 받으면 2일 안에 첫 시안, 5일 안에 완성해요.",["며칠","기간","언제까지","걸려"]],
- ["PC 점검","방문 없이 원격으로 해요. PC 1대 30,000원부터예요.\n연결은 사장님이 허락한 동안만 열려요.",["컴퓨터","PC","pc","느려","프린터"]],
+ ["PC 점검","방문 없이 원격으로 해요. 사무실 PC 여러 대도 한 번에 봐요.\n연결은 사장님이 허락한 동안만 열려요.",["컴퓨터","PC","pc","느려","프린터"]],
  ["찾아가는 길","인천 남동구 담방로21번길 55, 뉴서울아파트상가 2층 225호예요.\n남동구청역 4번 출구에서 700m예요.",["위치","어디","길","주소","사무실"]]
 ];
 var log=document.getElementById('log'),btns=document.getElementById('btns'),q=document.getElementById('q');
@@ -65,7 +65,7 @@ document.getElementById('send').onclick=go;q.addEventListener('keydown',function
 
 <section class="fsend"><div>
 <h2>우리 가게 카톡에도 붙일 수 있어요</h2>
-<p>자주 받는 질문을 같이 골라 가게 말투로 답을 만듭니다. 질문 20개 190,000원부터.</p>
+<p>자주 받는 질문을 같이 골라 가게 말투로 답을 만듭니다.</p>
 <a class="go" href="../chatbot.html#price">가격 보기</a><a class="go l" href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a><a class="go l" href="tel:01046825900">전화 010-4682-5900</a>
 </div></section>
 </body></html>

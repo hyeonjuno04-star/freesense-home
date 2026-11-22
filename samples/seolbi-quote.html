@@ -40,7 +40,7 @@ a{color:inherit}img{max-width:100%}
 @media print{.fsbar,.fsend,.iv-tool{display:none}body{background:#fff}.doc{border:0;box-shadow:none}.it button{display:none}}
 
 .emb .fsbar,.emb .fsend{display:none}
-</style><script>if(window!==top)document.documentElement.className+=" emb"</script></head>
+</style><script>if(window!==top||location.search.indexOf("shot")>-1)document.documentElement.className+=" emb"</script></head>
 <body>
 <div class="fsbar"><b>제작 샘플</b><span>프리쎈스 전용 견적서 · 프리쎈스를 손님으로 놓고 만든 샘플</span><a href="../invoice.html">← 서비스로</a></div>
 
@@ -48,15 +48,15 @@ a{color:inherit}img{max-width:100%}
 <div class="iv-tool"><h2>품목 고르기 — 수량만 넣으면 합계·부가세가 계산됩니다</h2>
 <div class="iv-add"><select id="pick" aria-label="품목"></select><input id="qty" type="number" min="1" value="1" aria-label="수량"><button type="button" id="add">추가</button><button type="button" class="iv-pr" onclick="print()">PDF 저장 · 인쇄</button></div></div>
 <div class="doc"><h1>견 적 서</h1>
-<div class="dh"><table><tr><td>받는 분</td><td>○○가게 사장님 귀하</td></tr><tr><td>날짜</td><td id="dt"></td></tr><tr><td>공사명</td><td>가게 홈페이지 제작</td></tr></table>
+<div class="dh"><table><tr><td>받는 분</td><td>○○가게 사장님 귀하</td></tr><tr><td>날짜</td><td id="dt"></td></tr><tr><td>공사명</td><td>사무용품 납품</td></tr></table>
 <table><tr><td>상호</td><td>프리쎈스 <span class="stamp">인</span></td></tr><tr><td>사업자번호</td><td>552-06-03586</td></tr><tr><td>연락처</td><td>010-4682-5900</td></tr></table></div>
 <table class="it"><thead><tr><th>품목</th><th>수량</th><th>단가</th><th>금액</th><th></th></tr></thead><tbody id="rows"></tbody></table>
 <div class="tot">공급가 <span id="sp"></span> · 부가세 <span id="vat"></span><br>합계 <b id="sum"></b></div>
 <p class="acc">대표 노현주 · 인천 남동구 담방로21번길 55, 뉴서울아파트상가 2층 225호 · 견적 유효기간 30일</p></div>
 </main>
 <script>
-var P=[["가게 홈페이지 기본형(3페이지)",150000],["가게 홈페이지 표준형(5페이지)",250000],["가게 홈페이지 완성형(8페이지)",350000],["업그레이드 관리(월)",10000],["카톡 상담 챗봇 기본형",190000],["원격 PC 점검(1대)",30000],["자막 쇼츠 1편",30000]];
-var pick=document.getElementById('pick'),rows=document.getElementById('rows'),L=[[1,1],[3,12],[6,1]];
+var P=[["재생 토너 (검정)",38000],["재생 토너 (컬러)",52000],["A4 복사용지 1박스",29000],["라벨지 100매",12000],["택배 상자 50개",35000],["볼펜 1다스",6000],["배송비",3000]];
+var pick=document.getElementById('pick'),rows=document.getElementById('rows'),L=[[0,2],[2,3],[6,1]];
 P.forEach(function(p,i){var o=document.createElement('option');o.value=i;o.textContent=p[0]+' · '+p[1].toLocaleString()+'원';pick.appendChild(o)});
 function w(n){return n.toLocaleString()+'원'}
 function draw(){rows.innerHTML='';var s=0;L.forEach(function(l,k){var p=P[l[0]],a=p[1]*l[1];s+=a;var tr=document.createElement('tr');
@@ -69,7 +69,7 @@ var d=new Date();document.getElementById('dt').textContent=d.getFullYear()+'년 
 
 <section class="fsend"><div>
 <h2>우리 회사 전용 견적서로 만들어 드려요</h2>
-<p>회사 정보·도장·계좌·품목을 미리 넣어 전용 주소로 드립니다. 품목 20개 50,000원부터.</p>
+<p>회사 정보·도장·계좌·품목을 미리 넣어 전용 주소로 드립니다.</p>
 <a class="go" href="../invoice.html#price">가격 보기</a><a class="go l" href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a><a class="go l" href="tel:01046825900">전화 010-4682-5900</a>
 </div></section>
 </body></html>
