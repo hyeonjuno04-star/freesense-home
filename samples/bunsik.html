@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>행복분식 홈페이지 | 프리쎈스 제작 샘플</title>
+<meta name="description" content="가게 홈페이지 제작 샘플 — 동네 분식집 휴대폰 홈페이지">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2316202E'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'>F</text></svg>">
+<style>
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#1c2430;background:#f4f5f7;line-height:1.6;word-break:keep-all}
+a{color:inherit}img{max-width:100%}
+.fsbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:9px 16px;background:#16202E;color:#fff;font-size:13.5px}
+.fsbar b{background:#2F7D6D;padding:2px 9px;border-radius:20px;font-size:12.5px;white-space:nowrap}
+.fsbar span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.85}
+.fsbar a{text-decoration:none;font-weight:700;white-space:nowrap}
+.fsend{max-width:760px;margin:30px auto 40px;padding:0 16px}
+.fsend div{background:#fff;border:1px solid #e2e5ea;border-top:4px solid #2F7D6D;border-radius:14px;padding:20px}
+.fsend h2{margin:0 0 6px;font-size:19px}.fsend p{margin:0 0 12px;color:#4d5765}
+.fsend .go{display:inline-block;background:#2F7D6D;color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;margin:4px 6px 0 0}
+.fsend .go.l{background:#fff;color:#2F7D6D;border:1.5px solid #2F7D6D}
+
+.hs-hero{background:linear-gradient(160deg,#F2A33A,#E0662B);color:#fff;padding:46px 20px 40px;text-align:center}
+.hs-hero small{font-weight:700;opacity:.9}.hs-hero h1{margin:6px 0 8px;font-size:34px}.hs-hero p{margin:0 0 18px;opacity:.95}
+.hs-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hs-btns a{background:#fff;color:#C4521F;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:30px;font-size:15px}
+.hs-wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.hs-sec{padding:28px 0 6px}.hs-sec h2{font-size:21px;margin:0 0 12px}
+.hs-open{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hs-open div{background:#fff;border-radius:12px;padding:14px;text-align:center;border:1px solid #eee}
+.hs-open b{display:block;font-size:20px;color:#E0662B}.hs-open span{font-size:13px;color:#666}
+.hs-menu{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hs-m{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #eee}
+.hs-m .ph{height:92px;display:flex;align-items:center;justify-content:center;font-size:40px}
+.hs-m div.t{padding:10px 12px}.hs-m b{display:block}.hs-m em{font-style:normal;color:#E0662B;font-weight:800}
+.hs-rev{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px;border-left:4px solid #F2A33A}
+.hs-map{background:#fff;border-radius:12px;padding:16px;border:1px solid #eee}
+.hs-map .m{height:140px;border-radius:10px;background:repeating-linear-gradient(45deg,#e9efe9,#e9efe9 10px,#f4f7f4 10px,#f4f7f4 20px);display:flex;align-items:center;justify-content:center;font-weight:800;color:#2F7D6D}
+.hs-float{position:fixed;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px;z-index:40}
+.hs-float a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:22px;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+@media(max-width:520px){.hs-open{grid-template-columns:1fr 1fr 1fr}.hs-hero h1{font-size:29px}}
+
+</style></head>
+<body>
+<div class="fsbar"><b>제작 샘플</b><span>행복분식 홈페이지 · 실제 가게가 아닌 예시입니다</span><a href="../homepage.html">← 서비스로</a></div>
+
+<header class="hs-hero"><small>인천 남동구 · 1998년부터</small><h1>행복분식</h1><p>매일 아침 직접 만드는 떡볶이와 김밥</p>
+<div class="hs-btns"><a href="#menu">메뉴 보기</a><a href="#map">오시는 길</a><a href="#ask">포장 주문 문의</a></div></header>
+<main class="hs-wrap">
+<section class="hs-sec"><h2>영업 안내</h2><div class="hs-open"><div><b>10:30</b><span>문 여는 시간</span></div><div><b>20:30</b><span>문 닫는 시간</span></div><div><b>일요일</b><span>쉬는 날</span></div></div></section>
+<section class="hs-sec" id="menu"><h2>메뉴</h2><div class="hs-menu">
+<div class="hs-m"><div class="ph" style="background:#FCE3D3">🌶️</div><div class="t"><b>국물 떡볶이</b><em>4,500원</em></div></div>
+<div class="hs-m"><div class="ph" style="background:#E5F1E2">🍙</div><div class="t"><b>참치 김밥</b><em>4,000원</em></div></div>
+<div class="hs-m"><div class="ph" style="background:#FFF2C9">🍤</div><div class="t"><b>모둠 튀김</b><em>5,000원</em></div></div>
+<div class="hs-m"><div class="ph" style="background:#E3ECF7">🍜</div><div class="t"><b>잔치 국수</b><em>5,500원</em></div></div>
+</div><p style="color:#777;font-size:14px">가격이 바뀌면 카톡으로 알려 주세요. 저희가 바로 고칩니다.</p></section>
+<section class="hs-sec"><h2>손님 이야기</h2>
+<div class="hs-rev">“학교 끝나고 들르던 맛 그대로예요.” <small>— 네이버 리뷰</small></div>
+<div class="hs-rev">“포장해 가도 국물이 넉넉해요.” <small>— 배달앱 리뷰</small></div></section>
+<section class="hs-sec" id="map"><h2>오시는 길</h2><div class="hs-map"><div class="m">지도가 들어가는 자리</div><p style="margin:10px 0 0">○○역 2번 출구에서 걸어서 3분 · 가게 앞 2대 주차</p></div></section>
+<section class="hs-sec" id="ask"><h2>포장 주문 문의</h2><div class="hs-map"><p style="margin:0">남겨 주신 글은 사장님 휴대폰 카톡으로 바로 갑니다.</p></div></section>
+</main>
+<div class="hs-float"><a href="tel:000" style="background:#2F7D6D;color:#fff" aria-label="전화">📞</a><a href="#map" style="background:#fff" aria-label="길찾기">📍</a><a href="#ask" style="background:#FEE500" aria-label="카톡">💬</a></div>
+
+<section class="fsend"><div>
+<h2>우리 가게도 이렇게 만들 수 있어요</h2>
+<p>질문지만 채워 주시면 2일 안에 첫 시안, 5일 안에 공개합니다. 3페이지 150,000원부터.</p>
+<a class="go" href="../homepage.html#price">가격 보기</a><a class="go l" href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a><a class="go l" href="tel:01046825900">전화 010-4682-5900</a>
+</div></section>
+</body></html>

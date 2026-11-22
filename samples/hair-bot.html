@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>○○미용실 카톡 상담 챗봇 | 프리쎈스 제작 샘플</title>
+<meta name="description" content="카카오톡 상담 챗봇 샘플 — 미용실 손님이 버튼을 누르면 바로 답이 나오는 화면">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2316202E'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'>F</text></svg>">
+<style>
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#1c2430;background:#f4f5f7;line-height:1.6;word-break:keep-all}
+a{color:inherit}img{max-width:100%}
+.fsbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:9px 16px;background:#16202E;color:#fff;font-size:13.5px}
+.fsbar b{background:#2B5C9E;padding:2px 9px;border-radius:20px;font-size:12.5px;white-space:nowrap}
+.fsbar span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.85}
+.fsbar a{text-decoration:none;font-weight:700;white-space:nowrap}
+.fsend{max-width:760px;margin:30px auto 40px;padding:0 16px}
+.fsend div{background:#fff;border:1px solid #e2e5ea;border-top:4px solid #2B5C9E;border-radius:14px;padding:20px}
+.fsend h2{margin:0 0 6px;font-size:19px}.fsend p{margin:0 0 12px;color:#4d5765}
+.fsend .go{display:inline-block;background:#2B5C9E;color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;margin:4px 6px 0 0}
+.fsend .go.l{background:#fff;color:#2B5C9E;border:1.5px solid #2B5C9E}
+
+.cb-wrap{max-width:460px;margin:18px auto;padding:0 12px}
+.cb{background:#BACEE0;border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.12)}
+.cb-top{background:#a9bfd4;padding:12px 14px;font-weight:800;display:flex;justify-content:space-between}
+.cb-top small{font-weight:600;opacity:.75}
+.cb-log{height:420px;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:8px}
+.mb{align-self:flex-start;max-width:82%;background:#fff;border-radius:4px 14px 14px 14px;padding:9px 12px;font-size:15px;white-space:pre-line}
+.me{align-self:flex-end;max-width:82%;background:#FEE500;border-radius:14px 4px 14px 14px;padding:9px 12px;font-size:15px}
+.cb-btns{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;background:#fff}
+.cb-btns button{border:1.5px solid #2B5C9E;background:#fff;color:#2B5C9E;border-radius:18px;padding:7px 12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.cb-in{display:flex;gap:6px;padding:8px 12px 12px;background:#fff}
+.cb-in input{flex:1;border:1px solid #ccd;border-radius:18px;padding:9px 12px;font-size:15px;font-family:inherit;min-width:0}
+.cb-in button{background:#FEE500;border:0;border-radius:18px;padding:0 14px;font-weight:800;font-family:inherit}
+.cb-note{font-size:13.5px;color:#5a6472;text-align:center;margin:10px 0 0}
+
+</style></head>
+<body>
+<div class="fsbar"><b>제작 샘플</b><span>○○미용실 카톡 상담 챗봇 · 실제 가게가 아닌 예시입니다</span><a href="../chatbot.html">← 서비스로</a></div>
+
+<main class="cb-wrap">
+<div class="cb"><div class="cb-top">○○미용실 <small>보통 바로 답해요</small></div>
+<div class="cb-log" id="log"><div class="mb">안녕하세요, ○○미용실입니다 💇
+아래 버튼을 누르거나 궁금한 걸 적어 주세요.</div></div>
+<div class="cb-btns" id="btns"></div>
+<div class="cb-in"><input id="q" placeholder="예: 주차 돼요?" aria-label="질문 적기"><button id="send" type="button">보내기</button></div></div>
+<p class="cb-note">직접 눌러 보세요. 실제 카톡 채널에 이렇게 붙습니다.</p>
+</main>
+<script>
+var A=[
+ ["영업시간","화~토 10:00~20:00, 일요일 11:00~18:00이에요.\n월요일은 쉬어요.",["시간","영업","몇 시","언제","열어","닫"]],
+ ["가격","커트 18,000원 · 펌 60,000원부터 · 염색 50,000원부터예요.\n머리 길이에 따라 달라져요.",["가격","얼마","비용","커트","펌","염색"]],
+ ["예약하기","네이버 예약이나 이 채팅에 원하시는 날짜·시간을 남겨 주세요.\n원장님이 확인하고 바로 답드려요.",["예약","자리","가능"]],
+ ["주차","건물 뒤 주차장 2시간 무료예요. 카운터에서 차 번호 알려 주세요.",["주차","차"]],
+ ["오시는 길","○○역 3번 출구에서 걸어서 4분, 1층 빵집 옆 2층이에요.",["위치","어디","길","주소"]]
+];
+var log=document.getElementById('log'),btns=document.getElementById('btns'),q=document.getElementById('q');
+function add(t,c){var d=document.createElement('div');d.className=c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function ans(t){add(t,'me');var h=null;A.forEach(function(a){if(a[0]===t||a[2].some(function(k){return t.indexOf(k)>-1}))h=h||a});
+ setTimeout(function(){add(h?h[1]:"그 질문은 원장님이 직접 답해 드릴게요.\n남겨 주시면 휴대폰으로 바로 알림이 가요 🙏",'mb')},450)}
+A.forEach(function(a){var b=document.createElement('button');b.type='button';b.textContent=a[0];b.onclick=function(){ans(a[0])};btns.appendChild(b)});
+function go(){var t=q.value.trim();if(!t)return;q.value='';ans(t)}
+document.getElementById('send').onclick=go;q.addEventListener('keydown',function(e){if(e.key==='Enter')go()});
+</script>
+
+<section class="fsend"><div>
+<h2>우리 가게 카톡에도 붙일 수 있어요</h2>
+<p>자주 받는 질문을 같이 골라 가게 말투로 답을 만듭니다. 질문 20개 190,000원부터.</p>
+<a class="go" href="../chatbot.html#price">가격 보기</a><a class="go l" href="https://pf.kakao.com/_mDcnX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a><a class="go l" href="tel:01046825900">전화 010-4682-5900</a>
+</div></section>
+</body></html>

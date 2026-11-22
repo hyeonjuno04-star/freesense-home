@@ -359,3 +359,5 @@ footer .copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,
 .dlv-files span{display:block;font-size:14px;color:#5a6472;line-height:1.5}
 @media (max-width:760px){.dlv{grid-template-columns:1fr}}
 @media print{.dlv-chat{box-shadow:none}}
+.dlv-demo{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;background:var(--c);color:#fff;text-decoration:none;border-radius:12px;padding:16px 18px}
+.dlv-demo span{font-size:14px;font-weight:700;opacity:.9}.dlv-demo b{font-size:17px}
